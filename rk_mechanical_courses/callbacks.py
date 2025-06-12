@@ -4,8 +4,9 @@ import dash_bootstrap_components as dbc
 import pandas as pd
 import os
 
+from .course_catalogue import course_catalogue
+
 def register_callbacks(app):
-    CATALOGUE_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), "course_catalogue.csv")
 
     @app.callback(
         Output("output", "children"),
@@ -25,7 +26,7 @@ def register_callbacks(app):
     )
     def search_courses(section, course_num, course_name, instructor):
         try:
-            df = pd.read_csv(CATALOGUE_PATH)
+            df = pd.DataFrame(course_catalogue)
             df.columns = df.columns.str.strip()
             df = df.apply(lambda col: col.map(lambda x: x.strip() if isinstance(x, str) else x))
         except Exception as e:
