@@ -43,8 +43,6 @@ pytz==2025.2
 pyzmq==26.4.0
 requests==2.32.4
 retrying==1.3.4
-# Editable install with no version control (rk-mechanical-courses==0.1.0)
--e /mnt/c/Users/billr/dev/school/holt-research/rk-mechanical/rk-mechanical-courses
 setuptools==80.9.0
 six==1.17.0
 stack-data==0.6.3
