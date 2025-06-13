@@ -34,6 +34,9 @@ def create_layout():
                     dbc.Col(dbc.Input(id="filter-instructor", type="text", placeholder="Instructor(s)", debounce=True, style={
                         "color": COLORS["text"], "background": "#fff", "borderColor": COLORS["secondary"], "borderRadius": "0.3em"
                     }), width=3),
+                    dbc.Col(dbc.Button("Search", id="search-button", color="primary", n_clicks=0, style={
+                        "width": "100%", "background": COLORS["primary"], "borderColor": COLORS["primary"], "borderRadius": "0.3em", "fontWeight": "bold"
+                    }), width=1),
                 ], className="mb-2 g-2", style={"marginRight": 0, "marginLeft": 0}),
                 html.Div(id="course-search-results"),
             ]),
